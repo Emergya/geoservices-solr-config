@@ -1,0 +1,2 @@
+geoservices-solr-config
+=======================
