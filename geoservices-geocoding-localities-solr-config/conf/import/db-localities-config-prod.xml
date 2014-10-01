@@ -22,14 +22,12 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 
 -->
 <dataConfig>
-	<dataSource name="oracle_jdbc" driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@192.168.5.92:1521:PROTCIV" user="PGIS" password="PGIS" batchSize="100" />
+	<dataSource name="oracle_jdbc" driver="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@192.168.5.192:1521:PROTCIV" user="PGIS" password="PGIS" batchSize="100" />
 	<document name="locality">
-		<entity name="ADM_MUNICIPIO" pk="ID" dataSource="oracle_jdbc" 
-			query="SELECT ROWNUM ID, m.NOMBRE NAME, MDSYS.SDO_UTIL.TO_WKTGEOMETRY(MDSYS.SDO_CS.TRANSFORM(m.geometry,4326)) GEOM FROM ADM_MUNICIPIO m"
-		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer,ClobTransformer">
+		<entity name="ADM_MUNICIPIO" pk="ID" dataSource="oracle_jdbc" query="SELECT ROWNUM ID, m.NOMBRE NAME, MDSYS.SDO_UTIL.TO_WKTGEOMETRY(MDSYS.SDO_CS.TRANSFORM(m.geometry,4326)) GEOM FROM ADM_MUNICIPIO m" transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer,ClobTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
-			<field column="GEOM" name="geom" clob="true"/>
+			<field column="GEOM" name="geom" clob="true" />
 		</entity>
 	</document>
 </dataConfig>
