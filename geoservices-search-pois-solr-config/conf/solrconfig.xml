@@ -1089,17 +1089,26 @@
 
     <requestHandler name="/dataimport-devel" class="org.apache.solr.handler.dataimport.DataImportHandler">
         <lst name="defaults">
-            <str name="config">import/db-poi-config-devel.xml</str>
+            <str name="config">import/db-poi-config.xml</str>
+ 	    <lst name="datasource">
+		<str name="name">oracle_jdbc</str>
+		<str name="driver">oracle.jdbc.driver.OracleDriver</str>
+		<str name="url">jdbc:oracle:thin:@oracle-apps-11g:1521:geostelef</str>
+		<str name="user">devel</str>
+		<str name="password">emergya</str>
+	    </lst>
         </lst>
-    </requestHandler>
-    <requestHandler name="/dataimport-devel-telef" class="org.apache.solr.handler.dataimport.DataImportHandler">
-        <lst name="defaults">
-            <str name="config">import/db-poi-config-devel-telef.xml</str>
-        </lst>
-    </requestHandler>
+    </requestHandler>   
     <requestHandler name="/dataimport-prod" class="org.apache.solr.handler.dataimport.DataImportHandler">
         <lst name="defaults">
-            <str name="config">import/db-poi-config-prod.xml</str>
+            <str name="config">import/db-poi-config.xml</str>	  
+	    <lst name="datasource">
+		<str name="name">oracle_jdbc</str>
+		<str name="driver">oracle.jdbc.driver.OracleDriver</str>
+		<str name="url">jdbc:oracle:thin:@192.168.5.192:1521:PROTCIV"</str>
+		<str name="user">PGIS</str>
+		<str name="password">PGIS</str>
+	    </lst> 
         </lst>
     </requestHandler>
 
