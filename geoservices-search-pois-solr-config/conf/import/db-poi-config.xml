@@ -25,7 +25,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 	<document name="poi">
 
 		<!-- Transporte -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Transporte' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ALQUILER DE COCHES' OR poi.ENTIDAD = 'EST. DE AUTOBUSES' OR poi.ENTIDAD = 'EST. DE FERROCARRIL' OR poi.ENTIDAD = 'PARKING' OR poi.ENTIDAD = 'PARKING DESCUBIERTO' OR poi.ENTIDAD = 'TALLER DE COCHES' OR poi.ENTIDAD = 'CONCES. AUTOMÓVILES' OR poi.ENTIDAD = 'CONCES. MOTOS' OR poi.ENTIDAD = 'AEROPUERTO')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ALQUILER DE COCHES' OR poi.ENTIDAD = 'EST. DE AUTOBUSES' OR poi.ENTIDAD = 'EST. DE FERROCARRIL' OR poi.ENTIDAD = 'PARKING' OR poi.ENTIDAD = 'PARKING DESCUBIERTO' OR poi.ENTIDAD = 'TALLER DE COCHES' OR poi.ENTIDAD = 'CONCES. AUTOMÓVILES' OR poi.ENTIDAD = 'CONCES. MOTOS' OR poi.ENTIDAD = 'AEROPUERTO')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -39,7 +39,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Salud -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Salud' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'AMBULATORIO' OR poi.ENTIDAD = 'HOSPITAL' OR poi.ENTIDAD = 'FARMACIA')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'AMBULATORIO' OR poi.ENTIDAD = 'HOSPITAL' OR poi.ENTIDAD = 'FARMACIA')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -53,7 +53,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Ocio y turismo -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Ocio y turismo' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ATRACCIÓN TURÍSTICA' OR poi.ENTIDAD = 'ARTICULOS HOGAR' OR poi.ENTIDAD = 'BODEGA' OR poi.ENTIDAD = 'CAMPING' OR poi.ENTIDAD = 'CASINO' OR poi.ENTIDAD = 'CENTRO DEPORTIVO' OR poi.ENTIDAD = 'CINE' OR poi.ENTIDAD = 'HOTEL' OR poi.ENTIDAD = 'BOLERA' OR poi.ENTIDAD = 'INF. TURÍSTICA' OR poi.ENTIDAD = 'LIBRERÍA' OR poi.ENTIDAD = 'MUSEO' OR poi.ENTIDAD = 'NEG. ESPECIALIZADO' OR poi.ENTIDAD = 'PISTA DE GOLF' OR poi.ENTIDAD = 'POLÍGONO DEPORTIVO' OR poi.ENTIDAD = 'TEATRO' OR poi.ENTIDAD = 'ZONA DE RECREO' OR poi.ENTIDAD = 'ZONA DE SERVICIOS' OR poi.ENTIDAD = 'BIBLIOTECA' OR poi.ENTIDAD = 'MONUMENTO HISTÓRICO')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ATRACCIÓN TURÍSTICA' OR poi.ENTIDAD = 'ARTICULOS HOGAR' OR poi.ENTIDAD = 'BODEGA' OR poi.ENTIDAD = 'CAMPING' OR poi.ENTIDAD = 'CASINO' OR poi.ENTIDAD = 'CENTRO DEPORTIVO' OR poi.ENTIDAD = 'CINE' OR poi.ENTIDAD = 'HOTEL' OR poi.ENTIDAD = 'BOLERA' OR poi.ENTIDAD = 'INF. TURÍSTICA' OR poi.ENTIDAD = 'LIBRERÍA' OR poi.ENTIDAD = 'MUSEO' OR poi.ENTIDAD = 'NEG. ESPECIALIZADO' OR poi.ENTIDAD = 'PISTA DE GOLF' OR poi.ENTIDAD = 'POLÍGONO DEPORTIVO' OR poi.ENTIDAD = 'TEATRO' OR poi.ENTIDAD = 'ZONA DE RECREO' OR poi.ENTIDAD = 'ZONA DE SERVICIOS' OR poi.ENTIDAD = 'BIBLIOTECA' OR poi.ENTIDAD = 'MONUMENTO HISTÓRICO')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -67,7 +67,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Centro Comercial y restauración -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Centro Comercial y restauración' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'CAFETERÍA' OR poi.ENTIDAD = 'CENTRO COMERCIAL' OR poi.ENTIDAD = 'RESTAURANTE' OR poi.ENTIDAD = 'SUPERMERCADO' OR poi.ENTIDAD = 'TIENDA DE ROPA' OR poi.ENTIDAD = 'TIENDA ELECTRÓNICA' OR poi.ENTIDAD = 'VIDA NOCTURNA' OR poi.ENTIDAD = 'GRANDES ALMACENES')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'CAFETERÍA' OR poi.ENTIDAD = 'CENTRO COMERCIAL' OR poi.ENTIDAD = 'RESTAURANTE' OR poi.ENTIDAD = 'SUPERMERCADO' OR poi.ENTIDAD = 'TIENDA DE ROPA' OR poi.ENTIDAD = 'TIENDA ELECTRÓNICA' OR poi.ENTIDAD = 'VIDA NOCTURNA' OR poi.ENTIDAD = 'GRANDES ALMACENES')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -81,7 +81,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Edificios y lugares oficiales -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Edificios y lugares oficiales' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ADMÓN. PÚBLICA' OR poi.ENTIDAD = 'AYUNTAMIENTO' OR poi.ENTIDAD = 'CEMENTERIO' OR poi.ENTIDAD = 'CENTRO CÍVICO' OR poi.ENTIDAD = 'CENTRO DE CONGRESOS' OR poi.ENTIDAD = 'ESCUELA' OR poi.ENTIDAD = 'LUGAR DE CULTO' OR poi.ENTIDAD = 'OFICINA DE CORREOS' OR poi.ENTIDAD = 'UNIVERSIDAD' OR poi.ENTIDAD = 'EMBAJADA')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ADMÓN. PÚBLICA' OR poi.ENTIDAD = 'AYUNTAMIENTO' OR poi.ENTIDAD = 'CEMENTERIO' OR poi.ENTIDAD = 'CENTRO CÍVICO' OR poi.ENTIDAD = 'CENTRO DE CONGRESOS' OR poi.ENTIDAD = 'ESCUELA' OR poi.ENTIDAD = 'LUGAR DE CULTO' OR poi.ENTIDAD = 'OFICINA DE CORREOS' OR poi.ENTIDAD = 'UNIVERSIDAD' OR poi.ENTIDAD = 'EMBAJADA')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -95,7 +95,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Seguridad -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Seguridad' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'COMISARÍA DE POLICÍA'"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'COMISARÍA DE POLICÍA'"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -109,7 +109,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Educacion -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Educacion' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ESCUELA' OR poi.ENTIDAD = 'UNIVERSIDAD')"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND (poi.ENTIDAD = 'ESCUELA' OR poi.ENTIDAD = 'UNIVERSIDAD')"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -123,7 +123,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Industria -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Industria' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'ZONA INDUSTRIAL'"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'ZONA INDUSTRIAL'"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -137,7 +137,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Gasolineras -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Gasolineras' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'GASOLINERA'"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'GASOLINERA'"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -151,7 +151,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Bancos -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO || ' (' || poi.DIRECCION || ')' NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Bancos' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'BANCO'"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO || ' (' || poi.DIRECCION || ')' NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD = 'BANCO'"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
@@ -165,7 +165,7 @@ For more details refer to URL : http://wiki.apache.org/solr/DataImportHandler
 		</entity>
 
 		<!-- Otros -->
-		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, 'Otros' LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD != 'ALQUILER DE COCHES' AND poi.ENTIDAD != 'EST. DE AUTOBUSES' AND poi.ENTIDAD != 'EST. DE FERROCARRIL' AND poi.ENTIDAD != 'PARKING' AND poi.ENTIDAD != 'PARKING DESCUBIERTO' AND poi.ENTIDAD != 'TALLER DE COCHES' AND poi.ENTIDAD != 'CONCES. AUTOMÓVILES' AND poi.ENTIDAD != 'CONCES. MOTOS' AND poi.ENTIDAD != 'AEROPUERTO' AND poi.ENTIDAD != 'AMBULATORIO' AND poi.ENTIDAD != 'FARMACIA' AND poi.ENTIDAD != 'HOSPITAL' AND poi.ENTIDAD != 'ATRACCIÓN TURÍSTICA' AND poi.ENTIDAD != 'ARTÍCULOS HOGAR' AND poi.ENTIDAD != 'BODEGA' AND poi.ENTIDAD != 'CAMPING' AND poi.ENTIDAD != 'CASINO' AND poi.ENTIDAD != 'CENTRO DEPORTIVO' AND poi.ENTIDAD != 'CINE' AND poi.ENTIDAD != 'HOTEL' AND poi.ENTIDAD != 'BOLERA' AND poi.ENTIDAD != 'INF. TURÍSTICA' AND poi.ENTIDAD != 'LIBRERÍA' AND poi.ENTIDAD != 'MUSEO' AND poi.ENTIDAD != 'NEG. ESPECIALIZADO' AND poi.ENTIDAD != 'PISTA DE GOLF' AND poi.ENTIDAD != 'POLÍGONO DEPORTIVO' AND poi.ENTIDAD != 'TEATRO' AND poi.ENTIDAD != 'ZONA DE RECREO' AND poi.ENTIDAD != 'ZONA DE SERVICIOS' AND poi.ENTIDAD != 'BIBLIOTECA' AND poi.ENTIDAD != 'MONUMENTO HISTÓRICO' AND poi.ENTIDAD != 'CAFETERÍA' AND poi.ENTIDAD != 'CENTRO COMERCIAL' AND poi.ENTIDAD != 'RESTAURANTE' AND poi.ENTIDAD != 'SUPERMERCADO' AND poi.ENTIDAD != 'TIENDA DE ROPA' AND poi.ENTIDAD != 'TIENDA ELECTRÓNICA' AND poi.ENTIDAD != 'VIDA NOCTURNA' AND poi.ENTIDAD != 'GRANDES ALMACENES' AND poi.ENTIDAD != 'ADMÓN. PÚBLICA' AND poi.ENTIDAD != 'AYUNTAMIENTO' AND poi.ENTIDAD != 'CEMENTERIO' AND poi.ENTIDAD != 'CENTRO CÍVICO' AND poi.ENTIDAD != 'CENTRO DE CONGRESOS' AND poi.ENTIDAD != 'ESCUELA' AND poi.ENTIDAD != 'LUGAR DE CULTO' AND poi.ENTIDAD != 'OFICINA DE CORREOS' AND poi.ENTIDAD != 'UNIVERSIDAD' AND poi.ENTIDAD != 'EMBAJADA' AND poi.ENTIDAD != 'COMISARÍA DE POLICÍA' AND poi.ENTIDAD != 'ZONA INDUSTRIAL' AND poi.ENTIDAD != 'GASOLINERA' AND poi.ENTIDAD != 'BANCO' AND poi.ENTIDAD != 'CAJERO AUTOMÁTICO'"
+		<entity name="carto_pu" pk="POI_ID" dataSource="oracle_jdbc" query="SELECT poi.POI_ID * 1000 as ID, poi.TEXTO NAME, poi.ENTIDAD TYPE, poi.DIRECCION ADDRESS, poi.LOCALIDAD LOCALITY_CODE, mun.NAME LOCALITY, poi.ENTIDAD LAYER, v.x X, v.y Y FROM CARTO_PU poi, TABLE(SDO_UTIL.GETVERTICES(poi.geometry)) v, CODMUN mun WHERE poi.LOCALIDAD = mun.COD AND poi.ENTIDAD != 'ALQUILER DE COCHES' AND poi.ENTIDAD != 'EST. DE AUTOBUSES' AND poi.ENTIDAD != 'EST. DE FERROCARRIL' AND poi.ENTIDAD != 'PARKING' AND poi.ENTIDAD != 'PARKING DESCUBIERTO' AND poi.ENTIDAD != 'TALLER DE COCHES' AND poi.ENTIDAD != 'CONCES. AUTOMÓVILES' AND poi.ENTIDAD != 'CONCES. MOTOS' AND poi.ENTIDAD != 'AEROPUERTO' AND poi.ENTIDAD != 'AMBULATORIO' AND poi.ENTIDAD != 'FARMACIA' AND poi.ENTIDAD != 'HOSPITAL' AND poi.ENTIDAD != 'ATRACCIÓN TURÍSTICA' AND poi.ENTIDAD != 'ARTÍCULOS HOGAR' AND poi.ENTIDAD != 'BODEGA' AND poi.ENTIDAD != 'CAMPING' AND poi.ENTIDAD != 'CASINO' AND poi.ENTIDAD != 'CENTRO DEPORTIVO' AND poi.ENTIDAD != 'CINE' AND poi.ENTIDAD != 'HOTEL' AND poi.ENTIDAD != 'BOLERA' AND poi.ENTIDAD != 'INF. TURÍSTICA' AND poi.ENTIDAD != 'LIBRERÍA' AND poi.ENTIDAD != 'MUSEO' AND poi.ENTIDAD != 'NEG. ESPECIALIZADO' AND poi.ENTIDAD != 'PISTA DE GOLF' AND poi.ENTIDAD != 'POLÍGONO DEPORTIVO' AND poi.ENTIDAD != 'TEATRO' AND poi.ENTIDAD != 'ZONA DE RECREO' AND poi.ENTIDAD != 'ZONA DE SERVICIOS' AND poi.ENTIDAD != 'BIBLIOTECA' AND poi.ENTIDAD != 'MONUMENTO HISTÓRICO' AND poi.ENTIDAD != 'CAFETERÍA' AND poi.ENTIDAD != 'CENTRO COMERCIAL' AND poi.ENTIDAD != 'RESTAURANTE' AND poi.ENTIDAD != 'SUPERMERCADO' AND poi.ENTIDAD != 'TIENDA DE ROPA' AND poi.ENTIDAD != 'TIENDA ELECTRÓNICA' AND poi.ENTIDAD != 'VIDA NOCTURNA' AND poi.ENTIDAD != 'GRANDES ALMACENES' AND poi.ENTIDAD != 'ADMÓN. PÚBLICA' AND poi.ENTIDAD != 'AYUNTAMIENTO' AND poi.ENTIDAD != 'CEMENTERIO' AND poi.ENTIDAD != 'CENTRO CÍVICO' AND poi.ENTIDAD != 'CENTRO DE CONGRESOS' AND poi.ENTIDAD != 'ESCUELA' AND poi.ENTIDAD != 'LUGAR DE CULTO' AND poi.ENTIDAD != 'OFICINA DE CORREOS' AND poi.ENTIDAD != 'UNIVERSIDAD' AND poi.ENTIDAD != 'EMBAJADA' AND poi.ENTIDAD != 'COMISARÍA DE POLICÍA' AND poi.ENTIDAD != 'ZONA INDUSTRIAL' AND poi.ENTIDAD != 'GASOLINERA' AND poi.ENTIDAD != 'BANCO' AND poi.ENTIDAD != 'CAJERO AUTOMÁTICO'"
 		transformer="TemplateTransformer,DateFormatTransformer,RegexTransformer">
 			<field column="ID" name="id" />
 			<field column="NAME" name="name" />
