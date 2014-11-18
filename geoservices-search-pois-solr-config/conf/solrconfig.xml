@@ -1105,7 +1105,7 @@
 	    <lst name="datasource">
 		<str name="name">oracle_jdbc</str>
 		<str name="driver">oracle.jdbc.driver.OracleDriver</str>
-		<str name="url">jdbc:oracle:thin:@192.168.5.192:1521:PROTCIV"</str>
+		<str name="url">jdbc:oracle:thin:@192.168.5.192:1521:PROTCIV</str>
 		<str name="user">PGIS</str>
 		<str name="password">PGIS</str>
 	    </lst> 
